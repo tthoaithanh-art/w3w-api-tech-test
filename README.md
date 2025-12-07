@@ -57,5 +57,11 @@ The test suite covers:
 - ✅ Invalid delimiters
 - ✅ Mixed delimiters
 - ✅ Input validation (empty input)
-- ✅ Language parameter (valid, invalid, missing)
+- ✅ Language parameter:
+  - Valid language codes
+  - Invalid language codes
+  - Missing language parameter (search across all languages)
+  - Multiple valid language codes from different regions
+  - Case sensitivity (uppercase/lowercase language codes)
+  - Empty string language parameter
 - ✅ Convert to three word address

@@ -1,16 +1,23 @@
 import { expect } from 'chai';
 import 'regenerator-runtime/runtime.js';
 import { convertToThreeWordAddress } from '../../apiDefinitions/public-api.js';
-import { getApiKey } from '../config/test-config.js';
+import { getApiKey, TEST_COORDINATES, TEST_EXPECTED_WORDS } from '../config/test-config.js';
 
 describe("Convert to three word address", function () {
-  it("Get three word address from coordinates", async function () {
-    const apiKey = getApiKey();
+  let apiKey;
 
+  before(function () {
+    apiKey = getApiKey();
+  });
+
+  it("should return three word address from coordinates", async function () {
     const response = await convertToThreeWordAddress(
       apiKey,
-      "10.780549, 106.705245"
+      TEST_COORDINATES.HO_CHI_MINH
     );
-    expect(response.data.words).to.equal("become.outlooks.rising");
+
+    expect(response.status).to.equal(200);
+    expect(response.data).to.not.have.property('error');
+    expect(response.data.words).to.equal(TEST_EXPECTED_WORDS.HO_CHI_MINH);
   });
 });

@@ -24,6 +24,21 @@ export const DELIMITERS = ['.', '。', '︒', '។', '։', '။', '۔', '።', '
 
 export const TEST_WORDS = ['filled', 'count', 'soap'];
 
+export const TEST_INPUTS = {
+    STANDARD: 'table.chair.s',
+    FRENCH: 'ukulélé.huitaine.g',
+    DEFAULT: 'filled.count.s'
+};
+
+export const TEST_COORDINATES = {
+    HO_CHI_MINH: "10.780549, 106.705245",
+    DEFAULT: "51.750984, -1.247145"
+};
+
+export const TEST_EXPECTED_WORDS = {
+    HO_CHI_MINH: "become.outlooks.rising"
+};
+
 // Note: apiKey is lazy-loaded to avoid errors when importing config without API_KEY set
 export const testConfig = {
     get apiKey() {
