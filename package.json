@@ -1,0 +1,28 @@
+{
+    "name": "what3words-qa-api-tech-test",
+    "version": "1.0.0",
+    "description": "what3words QA API Technical Test",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/w3w-internal/w3w-qa-api-tech-test.git"
+    },
+    "author": "what3words",
+    "type": "module",
+    "scripts": {
+        "test": "mocha tests/specs/**/*.js --require @babel/register",
+        "test:report": "mocha tests/specs/**/*.js --require @babel/register --reporter mochawesome --reporter-options reportDir=report,reportFilename=test-report,overwrite=true,html=true,json=true && npx opener report/test-report.html",
+        "test:report:ci": "mocha tests/specs/**/*.js --require @babel/register --reporter mochawesome --reporter-options reportDir=report,reportFilename=test-report,overwrite=true,html=true,json=true"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.23.0",
+        "@babel/preset-env": "^7.23.0",
+        "@babel/register": "^7.22.0",
+        "axios": "^1.13.2",
+        "chai": "^6.2.1",
+        "dotenv": "^17.2.3",
+        "mocha": "^11.7.5",
+        "mochawesome": "^7.1.4",
+        "opener": "^1.5.2",
+        "regenerator-runtime": "^0.14.1"
+    }
+}
